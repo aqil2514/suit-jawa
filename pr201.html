@@ -1,0 +1,74 @@
+<!DOCTYPE html> <html>
+    <head>
+        <meta charset="utf=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Suwit Jawa</title>
+        <link rel="stylesheet" href="pr201.css">
+    </head>
+    <body>
+        <h1>Suwit Jawa</h1>
+        <p>By Muhamad Aqil Maulana</p>
+
+        <!-- OPENING -->
+
+        <div class="menu-container" style="display: flex;">
+            <button id="button-play">Mulai</button>
+            <button id="button-how">Cara Bermain</button>
+            <button id="button-back"><a href="D:\Dokumen_Aqil\Data\Proyek\Program\Web_App\Menu.html">Halaman sebelumnya</a> </button>
+        </div>
+
+        <!-- CARA BERMAIN -->
+        <div class="how-container" style="display:none;">
+            <h1>Cara Bermain</h1>
+            <ol>
+                <li>Kamu berperan sebagai seorang player yang melawan musuh</li>
+                <li>Kamu diharuskan memilih gajah, semut, atau orang</li>
+                <li>Setelah itu, secara random musuh akan memilih pilihannya</li>
+                <li>Gajah = Menang melawan orang dan kalah lawan semut</li>
+                <li>Semut = Menang lawan gajah dan kalah lawan orang</li>
+                <li>Orang = Menang lawan semut dan kalah lawan gajah</li>
+            </ol>
+            <div class="how-button">
+                <button>Menu</button>
+                <button>Bermain</button>
+            </div>
+        </div>
+<!-- PERMAINAN -->
+        <div class="main-container" style="display:none;">
+            <div class="button-main">
+                <button id="button-main-back">Kembali</button>
+            </div>
+            <div class="container-comp">
+                <h2>Computer</h2>
+                <img src="img/gajah.jpg">
+            </div>
+            <div class="hasil"><p>hasil</p></div>
+            <div class="container-player">
+                <h2>Player</h2>
+                <img src="img/gajah.jpg" class="gajah">
+                <img src="img/semut.jpg" class="semut">
+                <img src="img/manusia.jpg" class="manusia">
+            </div>
+            <div class="container-score"><p>Skor Kamu:
+            </p><p id="score"></p></div>
+            <p id="score-help">?</p>
+            
+            <!-- SCORE HELP -->
+            <div class="score-help-box" style="display: none;">
+                <h1>Score</h1>
+                <ul>
+                    <li>Kamu memiliki skor awal 0</li>
+                    <li>Menang akan menambah skor 100</li>
+                    <li>Kalah akan berkurang 100</li>
+                    <li>Seri akan menambah skor 10</li>
+                    <li>Jika skor mencapai -300, Game Over</li>
+                    <li>Jika skor mencapai 500, Kamu menang</li>
+                </ul>
+                <button>Mulai</button>
+            </div>
+
+        </div>
+
+        <script src="pr201.js"></script>
+    </body>
+</html>
