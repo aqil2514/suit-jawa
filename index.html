@@ -60,13 +60,26 @@
                     <li>Kamu memiliki skor awal 0</li>
                     <li>Menang akan menambah skor 100</li>
                     <li>Kalah akan berkurang 100</li>
-                    <li>Seri akan menambah skor 10</li>
+                    <li>Seri tidak akan menambah skor</li>
                     <li>Jika skor mencapai -300, Game Over</li>
                     <li>Jika skor mencapai 500, Kamu menang</li>
                 </ul>
                 <button>Mulai</button>
             </div>
+        </div>
 
+        <div class="score-configure"  style="display:none">
+            <h1>Pengaturan Skor</h1>
+            <input type="number" name="" id="config-score" min="500" max="99999" placeholder="Tentukan skor">
+            <input type="submit" id="skor-ok">
+        </div>
+
+        <div class="menang">
+            <h1>Selamat Kamu Menang</h1>
+        </div>
+
+        <div class="kalah">
+            <h1>Game Over</h1>
         </div>
 
         <script src="scirpt.js"></script>

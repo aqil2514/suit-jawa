@@ -182,7 +182,7 @@ h1{
     background-color: lightblue;
 }
 
-.container-score{
+.container-score, .score-configure{
     position: absolute;
     top: 0px;
     right: 12%;
@@ -195,6 +195,10 @@ h1{
     font-weight: 900;
     font-size: 20px;
     text-transform: uppercase;
+}
+
+.container-score{
+    cursor: pointer;
 }
 
 .container-score p {
@@ -357,4 +361,81 @@ img{
     flex-direction: row;
     gap: 50px;
     background-color: lightgreen;
+    overflow: scroll;
+}
+
+.score-configure, .menang{
+    display: flex;
+    flex-direction: column;
+    top: 20%;
+    right: 25%;
+    width: 50%;
+    height: 30%;
+}
+
+.menang, .kalah{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    background-color: white;
+    border: 5px solid blue;
+    border-radius: 10px;
+    color: blue;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.kalah{
+    top: 30%;
+    right: 25%;
+    color: red;
+    border-color: red;
+    width: 50%;
+    height: 30%;
+    display: none;
+}
+
+.score-configure input[type="number"]{
+    width: 80%;
+    height: 20%;
+    margin: 10px auto;
+    font-size: 2rem;
+    color: blue;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.score-configure input[type="submit"]{
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 5px solid blue;
+    border-radius: 10px;
+    margin: 0 auto;
+    color: blue;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.menang-active{
+    display: flex;
+}
+
+
+@media (max-width: 768px){
+    .container-comp, .container-player{
+        width: 80%;
+    }
+    .button-main{
+        bottom: -70px;
+    }
+    #score-help{
+        right: 10px;
+    }
 }

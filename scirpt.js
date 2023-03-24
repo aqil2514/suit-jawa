@@ -3,7 +3,7 @@ const howTo = document.querySelector('.how-container')
 const menuBox = document.querySelector('.menu-container');
 const main = document.querySelector('.main-container');
 const rResult = document.getElementById('score');
-let fScore = 0
+let fScore = 99999;
 
 //MENU SECTION
 const buttonHow = document.getElementById('button-how');
@@ -115,9 +115,15 @@ Pictures.forEach(function(Picture){
             }if(hasil =='KALAH'){
                 fScore -= 100;
             }if(hasil =='SERI'){
-                fScore += 50;
+                fScore += 0;
             }
             rResult.innerHTML = fScore;
+
+            if(fScore == scoreTarget){
+                boxMenang.style.display='flex';
+            } if(fScore == -500){
+                boxKalah.style.display='flex';
+            }
         }, 1000)
 
     })
@@ -133,4 +139,29 @@ scoreHelp.addEventListener('click', function(){
 
 okBoxHelp.addEventListener('click', function(){
     boxScoreHelp.style.display='none';
+})
+
+document.addEventListener('click',function(e){
+    if(!scoreHelp.contains(e.target) && !boxScoreHelp.contains(e.target)){
+        boxScoreHelp.style.display='none';
+    } 
+})
+
+//Pengaturan Skor
+const containerSkor = document.querySelector('.container-score');
+const scoreContainer = document.querySelector('.score-configure');
+const scoreConfig = document.getElementById('config-score');
+const sConfigButton = document.getElementById('skor-ok');
+const boxMenang = document.querySelector('.menang');
+const boxKalah = document.querySelector('.kalah');
+let scoreTarget = 0;
+
+containerSkor.onclick= function(){
+    scoreContainer.style.display="flex";
+}
+
+sConfigButton.addEventListener('click', function(){
+    scoreTarget = parseInt(scoreConfig.value);
+    fScore = 0;
+    scoreContainer.style.display= 'none';
 })
