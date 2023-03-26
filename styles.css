@@ -429,6 +429,9 @@ img{
 
 
 @media (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
     .container-comp, .container-player{
         width: 80%;
     }

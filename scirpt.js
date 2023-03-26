@@ -3,6 +3,7 @@ const howTo = document.querySelector('.how-container')
 const menuBox = document.querySelector('.menu-container');
 const main = document.querySelector('.main-container');
 const rResult = document.getElementById('score');
+let scoreTarget = 0;
 let fScore = 99999;
 
 //MENU SECTION
@@ -15,6 +16,7 @@ buttonHow.addEventListener('click', function(){
 buttonPlay.addEventListener('click', function(){
     menuBox.style.display = 'none';
     main.style.display = 'flex';
+    scoreContainer.style.display='flex';
 })
 
 // CARA BERMAIN
@@ -117,12 +119,12 @@ Pictures.forEach(function(Picture){
             }if(hasil =='SERI'){
                 fScore += 0;
             }
-            rResult.innerHTML = fScore;
+            rResult.innerHTML = `${fScore} / ${scoreTarget}`;
 
             if(fScore == scoreTarget){
-                boxMenang.style.display='flex';
+                boxMenang.style.display='block';
             } if(fScore == -500){
-                boxKalah.style.display='flex';
+                boxKalah.style.display='block';
             }
         }, 1000)
 
@@ -154,7 +156,7 @@ const scoreConfig = document.getElementById('config-score');
 const sConfigButton = document.getElementById('skor-ok');
 const boxMenang = document.querySelector('.menang');
 const boxKalah = document.querySelector('.kalah');
-let scoreTarget = 0;
+
 
 containerSkor.onclick= function(){
     scoreContainer.style.display="flex";
@@ -162,6 +164,15 @@ containerSkor.onclick= function(){
 
 sConfigButton.addEventListener('click', function(){
     scoreTarget = parseInt(scoreConfig.value);
+    if(scoreTarget < 500){
+        alert('Skor minimal 500');
+        return scoreContainer.style.display='flex';
+    }
     fScore = 0;
     scoreContainer.style.display= 'none';
+})
+
+document.addEventListener('click', function(){
+    boxMenang.style.display= 'none';
+    boxKalah.style.display= 'none'; 
 })
