@@ -432,6 +432,13 @@ img{
     html{
         font-size: 50%;
     }
+    body{
+        position: relative;
+    }
+    .menu-container{
+        width: 50rem;
+        height: 70vh;
+    }
     .container-comp, .container-player{
         width: 80%;
     }
@@ -440,5 +447,14 @@ img{
     }
     #score-help{
         right: 10px;
+    }
+    .score-configure{
+        width: 51rem;
+        height: 40vh;
+        padding: 0 3rem;
+        position: inherit;
+        margin: -60rem 40rem;
+        z-index: 1; 
+        transform: scale(0.7);
     }
 }

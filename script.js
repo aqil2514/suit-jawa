@@ -32,10 +32,13 @@ buttonHowPlay.addEventListener('click', function(){
     main.style.display= 'flex';
 });
 
-
 //MAIN SECTION
 const buttonMainBack = document.getElementById('button-main-back');
 buttonMainBack.addEventListener('click', function(){
+    if(scoreContainer.style.display=='flex'){
+        alert('Tombol ini tidak dapat berfungsi selama penentuan skor');
+        return scoreContainer.style.display='flex';
+    }
     main.style.display= 'none';
     menuBox.style.display='flex';
     fScore = 0;
@@ -97,6 +100,10 @@ function putarHasil(){
 const Pictures = document.querySelectorAll('.container-player img');
 Pictures.forEach(function(Picture){
     Picture.addEventListener('click', function(){
+        if(scoreContainer.style.display=='flex'){
+            alert('Tombol ini tidak dapat berfungsi selama penentuan skor');
+            return scoreContainer.style.display='flex';
+        }
         const sCom = comAI();
         const sPlay = Picture.className;
         const hasil = rule(sCom, sPlay);
@@ -136,6 +143,10 @@ const scoreHelp = document.getElementById('score-help');
 const boxScoreHelp = document.querySelector('.score-help-box');
 const okBoxHelp = document.querySelector ('.score-help-box button');
 scoreHelp.addEventListener('click', function(){
+    if(scoreContainer.style.display=='flex'){
+        alert('Tombol ini tidak dapat berfungsi selama penentuan skor');
+        return scoreContainer.style.display='flex';
+    }
     boxScoreHelp.style.display='flex';
 })
 
@@ -159,7 +170,11 @@ const boxKalah = document.querySelector('.kalah');
 
 
 containerSkor.onclick= function(){
-    scoreContainer.style.display="flex";
+    if(scoreContainer.style.display=='flex'){
+        alert('Tombol ini tidak dapat berfungsi selama penentuan skor');
+        return scoreContainer.style.display='flex';
+    }
+    alert(`Capai skor sebanyak ${scoreTarget} untuk memenangkan permainan`);
 }
 
 sConfigButton.addEventListener('click', function(){
@@ -167,9 +182,16 @@ sConfigButton.addEventListener('click', function(){
     if(scoreTarget < 500){
         alert('Skor minimal 500');
         return scoreContainer.style.display='flex';
+    }else if(scoreTarget >=2001){
+        alert('Skor maksimal 2000');
+        return scoreContainer.style.display='flex';
+    }else if(isNaN(scoreTarget)){
+        alert('Harap masukkan angka');
+        return scoreContainer.style.display='flex';
     }
-    fScore = 0;
-    scoreContainer.style.display= 'none';
+        fScore = 0;
+        scoreContainer.style.display= 'none';
+
 })
 
 document.addEventListener('click', function(){
