@@ -1,3 +1,5 @@
+alert('Game ini tidak didesain untuk Smartphone. \nKemungkinan layar berantakan jika dibuka di perangkat Smartphone.')
+
 // SECTIONS
 const howTo = document.querySelector('.how-container')
 const menuBox = document.querySelector('.menu-container');
@@ -177,13 +179,20 @@ containerSkor.onclick= function(){
     alert(`Capai skor sebanyak ${scoreTarget} untuk memenangkan permainan`);
 }
 
+scoreConfig.addEventListener('keypress', function(e){
+    if(e.key ==='Enter'){
+        e.preventDefault();
+        sConfigButton.click();
+    }
+})
+
 sConfigButton.addEventListener('click', function(){
     scoreTarget = parseInt(scoreConfig.value);
     if(scoreTarget < 500){
         alert('Skor minimal 500');
         return scoreContainer.style.display='flex';
-    }else if(scoreTarget >=2001){
-        alert('Skor maksimal 2000');
+    }else if(scoreTarget >=5001){
+        alert('Skor maksimal 5000');
         return scoreContainer.style.display='flex';
     }else if(isNaN(scoreTarget)){
         alert('Harap masukkan angka');
