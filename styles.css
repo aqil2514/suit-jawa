@@ -361,7 +361,7 @@ img{
     flex-direction: row;
     gap: 50px;
     background-color: lightgreen;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .score-configure, .menang{
@@ -441,6 +441,7 @@ img{
     }
     .container-comp, .container-player{
         width: 80%;
+        overflow: scroll;
     }
     .button-main{
         bottom: -70px;
