@@ -113,7 +113,7 @@ h1{
     height: 50px;
     background: transparent;
     border: 5px solid red;
-    border-radius: 50%;
+    border-radius: 10px;
     color: white;
     font-size: 18px;
     font-weight: bold;
